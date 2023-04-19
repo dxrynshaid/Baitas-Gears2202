@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="1.css" />
+        <title>Гантели </title>
+    </head>
+    <body>
+        <main>  
+            <div class="topnav">        
+                <a style="margin-left:90px;"><img src="C:\Users\shaid\Documents\WEB-SPORT INVENT\1053916.png" 
+                    width="80" 
+                    height="80"></a>
+                <a class="active" href="C:\Users\shaid\Documents\WEB-SPORT INVENT\index.html">Главная</a>
+                <a style="margin-top:25px;" href="#news">Каталог</a>
+                <a style="margin-top:25px;"  href="#contact">О нас</a>
+                <a style="margin-top:25px;"  href="#about">Как заказать</a>
+                <a style="margin-top:25px;"  href="#about">Мы на карте</a>
+                <a class="butt" href="C:\Users\shaid\Documents\WEB-SPORT INVENT\map.html"><button>Связаться с нами</button></a>
+              </div>
+              
+        <div class ='product' >
+            <img src="d3.png"
+            height="300px"
+            width="300px"
+            />
+            <h1>Разборные Гантели 12 кг</h1>
+            <p>Разборные Гантели 12 кг для домашнего использования имеющий очень удобный хват</p>
+            <p>Цена:24 990 тг</p>
+            <button onclick="addToBasket('Гантели 12 кг', 24990)">В корзину</button>
+        </div>
+        <div class = 'product' >
+            <img src="d4.png"
+            height="300px"
+            width="300px"
+            />
+            <h1>Разборные Гантели 9 кг</h1>
+            <p>Разборные Гантели 9 кг для домашнего использования,подходящий всем спортсменам и пауэрлифтерам</p>
+            <p>Цена:17 990 тг</p>
+            <button onclick="addToBasket('Гантели 9 кг', 17990)">В корзину</button>
+        </div>
+        
+        </main>
+        <div class="basket"> 
+            <h2>Корзина</h2> 
+            <ul id="basket-items"> 
+            </ul> 
+            <p>Итого: <span id="total-price">0</span> тг</p> 
+            <button>Оформить заказ</button> 
+        </div> 
+        <script> 
+            let basketItems = []; 
+            let total = 0; 
+            const basketItemsElem = document.getElementById('basket-items'); 
+            const totalElem = document.getElementById('total-price'); 
+ 
+            function addToBasket(name, price) { 
+                basketItems.push({ name, price }); 
+                total += price; 
+                updateBasket(); 
+            } 
+            function updateBasket() { 
+                basketItemsElem.innerHTML = ''; 
+                basketItems.forEach(item => { 
+                    const li = document.createElement 
+                     ('li'); 
+                li.textContent = `${item.name} ${item.price} тг`; 
+                basketItemsElem.appendChild(li); 
+            }); 
+            totalElem.textContent = total; 
+        } 
+    </script> 
+    </body>
+</html>
